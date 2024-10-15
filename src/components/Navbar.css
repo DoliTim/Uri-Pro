@@ -1,0 +1,82 @@
+/* src/components/Navbar.css */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000; /* Black background */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  z-index: 10;
+}
+
+.logo-btn {
+  flex: 1;
+}
+
+.logo {
+  width: 50px;
+  cursor: pointer;
+}
+
+.buy-now-btn {
+  background-color: orange;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-now-btn:hover {
+  background-color: darkorange;
+}
+
+.language-selector {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.language-select {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: black;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    padding: 10px;
+  }
+
+  .logo-btn {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .buy-now-btn {
+    flex: 1;
+    margin: 0 auto;
+    font-size: 1rem;
+  }
+
+  .language-selector {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .language-select {
+    font-size: 0.9rem;
+  }
+}

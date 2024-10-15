@@ -1,0 +1,47 @@
+/* src/components/BuyNow.css */
+.buy-now-section {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .product-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+  }
+  
+  .product-image {
+    width: 300px;
+    margin-right: 40px;
+  }
+  
+  .product-info {
+    max-width: 600px;
+    text-align: left;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+  
+  .add-to-cart-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: #0056b3;
+  }
+  

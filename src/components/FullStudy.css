@@ -1,0 +1,71 @@
+/* src/components/FullStudy.css */
+.full-study {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .full-study h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .full-study p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 30px;
+  }
+  
+  .treatment-options {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .treatment-card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  .treatment-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .treatment-card p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .best-value {
+    background-color: #203f35;
+    color: white;
+  }
+  
+  .sale {
+    color: #ff4500;
+    font-weight: bold;
+  }
+  
+  .buy-now-section {
+    margin-top: 40px;
+  }
+  
+  .buy-now-btn {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background-color: #006400; /* Dark green background */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buy-now-btn:hover {
+    background-color: #004d00; /* Darker green on hover */
+  }
+  

@@ -1,0 +1,56 @@
+/* src/components/Reviews.css */
+.reviews-section {
+    padding: 60px 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+  }
+  
+  .reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow-y: scroll; /* Remove the fixed height */
+  }
+  
+  .review {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .review h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .review p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .review-date {
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  .reviews-container::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  .reviews-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+  }
+  
+  /* Responsive layout */
+  @media (max-width: 768px) {
+    .reviews-container {
+      padding: 10px; /* Adjust padding for smaller screens */
+    }
+  }
+  

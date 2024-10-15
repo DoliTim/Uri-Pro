@@ -1,0 +1,13 @@
+/* src/components/ScientificStudy.css */
+.scientific-study {
+    padding: 60px 20px;
+    background-color: rgba(56, 96, 79, 0.9);
+    text-align: center;
+  }
+  
+  .study-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+  

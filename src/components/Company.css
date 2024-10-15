@@ -1,0 +1,24 @@
+/* src/components/Company.css */
+.company {
+    padding: 80px 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+  }
+  
+  .company-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .company h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .company p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
