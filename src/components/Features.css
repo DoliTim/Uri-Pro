@@ -1,24 +1,23 @@
 .features {
-  padding: 20px 20px;
+  padding: 40px 20px; /* Increased padding */
   background-color: #f7f7f7;
   text-align: center;
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Single-column grid */
-  grid-template-rows: auto auto auto auto auto; /* Five rows */
-  gap: 20px;
-  max-width: 800px; /* Adjust width for readability */
+  grid-template-columns: 1fr; 
+  grid-template-rows: auto auto auto auto auto; 
+  max-width: 800px; 
   margin: 0 auto;
+  gap: 20px; /* Added space between the rows */
   align-items: center;
   justify-items: center;
 }
 
-/* Pill image centered and reduced in size */
 .pill-image-container {
-  grid-row: 3; /* Place the pill in the third row */
-  background-image: url('/src/images/pillz.png'); /* Background image path */
+  grid-row: 3;
+  background-image: url('/src/images/pillz.png'); 
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -27,7 +26,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: rotate(-90deg); /* Rotate the pill 90 degrees to the left */
+  transform: rotate(-90deg);
+  margin: 20px 0; /* Added margin for spacing */
 }
 
 .pill-image {
@@ -35,22 +35,25 @@
   height: auto;
 }
 
-/* Feature item headings color */
 .feature-item h3 {
-  color: rgba(56, 96, 79, 0.9); /* Set heading color */
+  color: rgba(56, 96, 79, 0.9); 
   font-size: 1.8rem;
+  margin-bottom: 10px; /* Added space below heading */
 }
 
-/* Responsive layout for mobile devices */
+.feature-item p {
+  margin: 0 0 20px; /* Added space below paragraphs */
+}
+
 @media (max-width: 768px) {
   .pill-image-container {
     width: 100px;
     height: 100px;
-    transform: rotate(0deg); /* Remove rotation for mobile */
+    transform: rotate(0deg); 
     margin: 20px auto;
   }
   
   .feature-item h3 {
-    font-size: 1.5rem; /* Reduce font size on mobile */
+    font-size: 1.5rem; 
   }
 }

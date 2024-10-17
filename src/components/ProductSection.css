@@ -1,4 +1,3 @@
-/* Product Section Styling */
 .product-section {
   display: flex;
   flex-direction: column;
@@ -6,6 +5,129 @@
   padding: 40px 20px;
   background-color: #ffffff;
   text-align: center;
+}
+
+.product-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: rgba(56, 96, 79, 1);
+}
+
+.product-text {
+  max-width: 800px;
+  margin: 0 auto 40px auto; /* Centering the product text */
+  color: black;
+  line-height: 1.6;
+}
+
+.treatment-options {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch; 
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.treatment-card {
+  background-color: #101111; 
+  color: white; 
+  padding: 30px;
+  border-radius: 8px;
+  flex: 1; 
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.treatment-card:hover {
+  transform: scale(1.05); 
+}
+
+.treatment-card.selected {
+  border: 2px solid orange;
+}
+
+.treatment-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.treatment-card p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: white; 
+}
+
+.sale {
+  color: orange;
+  font-weight: bold;
+}
+
+.highlight-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: orange;
+  margin-bottom: 30px;
+}
+
+/* Center the Buy Now button on mobile */
+.buy-now-btn {
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  background-color: orange;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px; 
+}
+
+.buy-now-btn:hover {
+  background-color: darkorange;
+}
+
+.expand-btn {
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  background-color: #203f35;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.expand-btn:hover {
+  background-color: orange;
+}
+
+.essay-container {
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.highlight {
+  color: orange;
+  font-weight: bold;
+}
+
+.bladder-image-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.bladder-image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .product-content {
@@ -24,111 +146,30 @@
   width: 300px;
 }
 
-.product-text {
-  max-width: 800px;
-  margin-bottom: 30px;
-  color: black;
-}
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+  .product-section {
+    padding: 20px 15px; /* Reducing padding on mobile */
+  }
 
-.treatment-options {
-  display: flex;
-  justify-content: space-around;
-  align-items: stretch; /* Ensure all cards stretch to the same height */
-  gap: 20px;
-  flex-wrap: wrap;
-}
+  .product-text {
+    max-width: 100%; /* Full width on mobile */
+    margin: 0 auto 20px auto; /* Center the text properly */
+  }
 
-.treatment-card {
-  background-color: #101111; /* Dark green for all cards */
-  color: white; /* White text for all cards */
-  padding: 30px;
-  border-radius: 8px;
-  flex: 1; /* Equal spacing for all cards */
-  max-width: 300px; /* Control width */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Ensure even space inside the card */
-  transition: transform 0.3s ease, border-color 0.3s ease; /* For hover and border transitions */
-  cursor: pointer;
-}
+  .treatment-card {
+    max-width: 100%; /* Full width on mobile */
+  }
 
-/* Hover effect for treatment cards */
-.treatment-card:hover {
-  transform: scale(1.05); /* Slightly expand the card on hover */
-}
+  .buy-now-btn {
+    padding: 15px 20px;
+    font-size: 1.4rem;
+    margin: 20px 0; /* Adjusting space for mobile */
+  }
 
-/* Selected treatment card border */
-.treatment-card.selected {
-  border: 2px solid orange; /* Orange outline for selected card */
-}
-
-.treatment-card h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-.treatment-card p {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  color: white; /* Ensure text color is white */
-}
-
-.sale {
-  color:orange;
-  font-weight: bold;
-}
-
-.highlight-text {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: orange;
-  margin-bottom: 30px;
-}
-
-/* Buttons styling */
-.buy-now-btn {
-  padding: 15px 30px;
-  font-size: 1.5rem;
-  background-color: #203f35;
-  color: white;
-  text-decoration: none;
-  border-radius: 20px;
-  transition: background-color 0.3s ease;
-  margin-top: 20px; /* Adjust as needed */
-  cursor: pointer;
-}
-
-.buy-now-btn:hover {
-  background-color: orange;
-}
-
-/* Position the expand button above the treatment cards */
-.expand-btn {
-  padding: 15px 30px;
-  font-size: 1.5rem;
-  background-color: #203f35;
-  color: white;
-  text-decoration: none;
-  border-radius: 20px;
-  transition: background-color 0.3s ease;
-  margin-bottom: 30px; /* Add margin below */
-  cursor: pointer;
-}
-
-.expand-btn:hover {
-  background-color: orange;
-}
-
-/* Expandable essay container */
-.essay-container {
-  margin-top: 20px;
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-}
-
-.highlight {
-  color: orange;
-  font-weight: bold;
+  .expand-btn {
+    padding: 15px 20px;
+    font-size: 1.4rem;
+    margin-top: 20px;
+  }
 }

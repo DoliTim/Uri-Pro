@@ -1,97 +1,96 @@
-/* src/components/Hero.css */
 .hero {
-    display: flex;
-    height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+  box-sizing: border-box;
+ 
+}
+
+.hero-left {
+  background: linear-gradient(to bottom, black, rgba(56, 96, 79, 0.9));
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.hero-text-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.hero-text-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-left h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: rgba(56, 96, 79, 1);
+}
+
+.hero-left p {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #080808;
+}
+
+.cta-btn {
+  background-color: #fff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: rgba(56, 96, 79, 0.9);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #f0f0f0;
+  color: rgba(56, 96, 79, 1);
+}
+
+
+.hero-right {
+  flex: 1;
+  background-image: url('/src/images/uri.png');
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+}
+
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column; 
+   margin-top: 100px; 
   }
-  
-  /* Left side with inverted gradient: black on top, green on the bottom */
-  .hero-left {
-    background: linear-gradient(to bottom, black, rgba(56, 96, 79, 0.9)); /* Inverted gradient */
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding: 20px;
+
+  .hero-left, .hero-right {
+    width: 100%; 
+    height: 50vh; 
   }
-  
-  /* Translucent white container for text with hover animation */
-  .hero-text-container {
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-    padding: 40px;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px; /* Space between text elements */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
-  }
-  
-  .hero-text-container:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add a soft shadow on hover */
-  }
-  
-  .hero-left h1 {
-    font-size: 3rem;
-    margin: 0; /* Remove extra margin */
-    color: rgba(56, 96, 79, 1) /* White text */
-  }
-  
-  .hero-left p {
-    font-size: 1.5rem;
-    margin: 0; /* Remove extra margin */
-    color: #080808; /* White text */
-  }
-  
-  .cta-btn {
-    background-color: #fff; /* White background */
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    color: rgba(56, 96, 79, 0.9); /* Dark green text */
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .cta-btn:hover {
-    background-color: #f0f0f0; /* Slight grey on hover */
-    color: rgba(56, 96, 79, 1); /* Dark green */
-  }
-  
-  /* Right side with the image */
+
   .hero-right {
-    width: 50%;
-    background-image: url('/src/images/uri.png'); /* Use your uploaded image */
-    background-size: cover;
-    background-position: center;
+    order: 2;
   }
-  
-  /* Responsive layout for mobile devices */
-  @media (max-width: 768px) {
-    .hero {
-      flex-direction: column;
-    }
-  
-    .hero-left, .hero-right {
-      width: 100%;
-      height: 50vh;
-    }
-  
-    .hero-left h1 {
-      font-size: 2rem;
-    }
-  
-    .hero-left p {
-      font-size: 1.2rem;
-    }
-  
-    .cta-btn {
-      padding: 10px 20px;
-      font-size: 1rem;
-    }
+
+  .hero-left {
+    order: 1; 
   }
-  
+}

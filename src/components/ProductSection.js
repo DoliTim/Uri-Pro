@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './ProductSection.css';
+import { FaStar } from 'react-icons/fa'; // Import React Icon for the best deal
 
 const ProductSection = () => {
   const [selectedTreatment, setSelectedTreatment] = useState('');
-  const [isExpanded, setIsExpanded] = useState(false); // State to handle the expanded essay section
+  const [isExpanded, setIsExpanded] = useState(false);
   const navigate = useNavigate();
 
   const handleSelection = (treatment) => {
@@ -26,12 +27,14 @@ const ProductSection = () => {
 
   return (
     <section className="product-section">
+      {/* Added Heading */}
+      <h1 className="product-heading">Uri-PRO</h1>
       <div className="product-text">
         <p>
           The bioactive pelvic floor muscle strengthener is a scientifically-backed solution designed for the effective management and treatment of urinary dysfunction. In clinical trials, our comprehensive three-phase treatment showed a <span className="highlight">99% satisfaction rate</span> among participants, with marked improvements in urinary control, bladder function, and overall quality of life.
         </p>
 
-        {/* Expandable essay button placed above the treatment cards */}
+        {/* Expandable essay button */}
         <button className="expand-btn" onClick={toggleEssay}>
           {isExpanded ? 'Hide Details' : 'Learn More About the Clinical Study'}
         </button>
@@ -42,44 +45,48 @@ const ProductSection = () => {
               Our clinical study involved over 1,000 participants suffering from various stages of urinary dysfunction. Each participant underwent a structured regimen over three months, with treatment tailored to address their unique condition. The trial demonstrated that <span className="highlight">99%</span> of participants experienced significant improvements in bladder control, reduced frequency of urinary urgency, and enhanced overall quality of life.
             </p>
             <p>
-              In the <span className="highlight">first month</span> of treatment, participants focused on <span className="highlight">cleansing</span> the urinary system. This phase utilized natural phytosterols to detoxify the bladder and urethral tissues. During this period, 85% of users reported a noticeable reduction in urinary discomfort, with inflammation markers decreasing by 20%.
+              In the <span className="highlight">first month</span> of treatment, participants focused on <span className="highlight">cleansing</span> the urinary system. This phase utilized natural phytosterols to detoxify the bladder and urethral tissues.
             </p>
             <p>
-              The <span className="highlight">second month</span> focused on <span className="highlight">recovery</span> and strengthening the pelvic floor muscles. This phase used a blend of cranberry extract and D-Mannose to repair damaged tissues and promote better bladder retention. By the end of this phase, 92% of participants reported improved urinary control, with frequent urination reduced by 60%.
+              The <span className="highlight">second month</span> focused on <span className="highlight">recovery</span> and strengthening the pelvic floor muscles. This phase used a blend of cranberry extract and D-Mannose to repair damaged tissues and promote better bladder retention.
             </p>
             <p>
-              The final phase, the <span className="highlight">third month</span>, was designed to ensure <span className="highlight">long-term protection</span> and maintenance. During this period, participants took advantage of our special 2+1 free offer, completing a full 3-month course. At the end of the study, 99% of users maintained stable bladder control and reported no recurrent infections, with significant improvements in overall wellbeing.
+              The final phase, the <span className="highlight">third month</span>, was designed to ensure <span className="highlight">long-term protection</span> and maintenance. Participants completed a full 3-month course with a special offer.
             </p>
-            <p>
-              This clinical trial confirms that our treatment program is <span className="highlight">safe</span>, <span className="highlight">effective</span>, and provides a long-term solution for individuals suffering from bladder issues. The results speak for themselves, with participants gaining lasting confidence and control over their urinary health.
-            </p>
+            {/* Added Image at the Bottom */}
+            <div className="bladder-image-container">
+              <img src={require('../images/bladder.jpg')} alt="Bladder Diagram" />
+            </div>
           </div>
         )}
 
         <div className="treatment-options">
+          {/* 1 Month Treatment */}
           <div className={`treatment-card ${selectedTreatment === '1-month' ? 'selected' : ''}`} onClick={() => handleSelection('1-month')}>
             <h2>1 Month Treatment</h2>
-            <p>Price: €29.99</p>
-            <p>The 1-month treatment includes 30 pills and provides initial relief from urinary discomfort. It helps detoxify and prepare the urinary tract for long-term healing. <span className="highlight"></span></p>
+            <p>Price: €30.00</p>
+            <p><span className="highlight">30 pills</span> (4 weeks). Initial relief from urinary discomfort, detoxify and prepare the urinary tract.</p>
           </div>
 
+          {/* 2 Months Treatment */}
           <div className={`treatment-card ${selectedTreatment === '2-month' ? 'selected' : ''}`} onClick={() => handleSelection('2-month')}>
             <h2>2 Months Treatment</h2>
-            <p>Price: €49.99</p>
-            <p>This plan includes 60 pills for a deeper healing process, aiming to reduce urinary frequency and discomfort while improving bladder control. <span className="highlight"></span></p>
+            <p>Price: €50.00</p>
+            <p><span className="highlight">60 pills</span> (8 weeks). Deeper healing process, reduce urinary frequency and discomfort, improve bladder control.</p>
           </div>
 
+          {/* 3 Months Treatment (Best Deal) */}
           <div className={`treatment-card best-value ${selectedTreatment === '3-month' ? 'selected' : ''}`} onClick={() => handleSelection('3-month')}>
-            <h2>3 Months Treatment</h2>
-            <p>Price: €49.99 <span className="sale">Special Sale: 2+1 Free!</span></p>
-            <p>The 3-month treatment is the best value, consisting of 90 pills, helping to restore normal urethra function and protect against future infections. Recommended for full recovery and long-term protection. <span className="highlight"></span></p>
+            <h2>3 Months Treatment <FaStar style={{ color: 'orange', marginLeft: '10px' }} /></h2>
+            <p>Price: €59.99 <span className="sale">Special Sale: 2+1 Free!</span></p>
+            <p><span className="highlight">90 pills</span> (12 weeks). Best value for full recovery and long-term protection, based on our survey, 90% of users choose this plan for complete and lasting results.</p>
           </div>
         </div>
 
         <p className="highlight-text">Relive Your Life and Get Rid of Bladder Issues for Good for Less Than 1 EUR a Day</p>
 
         {/* Buy Now button */}
-        <button className="buy-now-btn" onClick={() => navigate('/buy-now')}>
+        <button className="buy-now-btn" onClick={handleBuyNow}>
           Buy Now
         </button>
       </div>

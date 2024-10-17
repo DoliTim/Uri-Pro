@@ -1,4 +1,3 @@
-/* Ingredients Section Styling */
 .ingredients-section {
   padding: 40px 20px;
   background-color: orange;
@@ -15,7 +14,7 @@
 .ingredient-card {
   width: 250px;
   height: 250px;
-  background-color: #f0f0f0;
+  background-color: orange;
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -31,47 +30,21 @@
   object-fit: cover;
 }
 
-/* Hover effect */
-.ingredient-card:hover {
-  background-color: orange; /* Keeps the background orange on hover */
-  transform: scale(1.1); /* Expand on hover */
-}
-
 .ingredient-details {
   color: white;
   padding: 20px;
   text-align: center;
 }
 
-/* Hover effect to make text white */
+
 .ingredient-card:hover .ingredient-details {
-  color: white; /* Ensures text is white on hover */
+  color: white; 
 }
 
-/* Title Styling */
+
 h2.ingredients-title {
   font-size: 2.2rem;
   font-weight: bold;
-  color: #004d00; /* Dark green title text */
+  color: #004d00; 
   margin-bottom: 30px;
-}
-
-/* Hover text with an arrow */
-.hover-text {
-  font-family: 'Indie Flower', cursive;
-  font-size: 1.2rem;
-  color: black;
-  margin-top: 20px;
-  display: block; /* Ensure it is displayed */
-  position: relative;
-}
-
-/* Arrow styling */
-.hover-text::before {
-  content: '➤'; /* Arrow character */
-  position: absolute;
-  left: -20px; /* Adjust to position the arrow left of the text */
-  top: 0;
-  font-size: 1.2rem;
-  transform: rotate(-20deg); /* Slight rotation for a playful look */
 }

@@ -7,7 +7,7 @@ import ProductSection from './components/ProductSection';
 import Ingredients from './components/Ingredients';
 import Company from './components/Company';
 import Reviews from './components/Reviews';
-import MultiStepForm from './components/MultiStepForm'; // Import MultiStepForm component
+import MultiStepForm from './components/MultiStepForm';
 import './App.css';
 
 function App() {
@@ -17,9 +17,9 @@ function App() {
   // Function to add an item to the cart
   const addToCart = (item) => {
     setCartItems((prevItems) => {
-      const itemExists = prevItems.find(cartItem => cartItem.name === item.name);
+      const itemExists = prevItems.find((cartItem) => cartItem.name === item.name);
       if (itemExists) {
-        return prevItems.map(cartItem =>
+        return prevItems.map((cartItem) =>
           cartItem.name === item.name ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
         );
       } else {
@@ -35,14 +35,36 @@ function App() {
     }
   };
 
+  // Function to handle language change
+  const changeLanguage = (countryCode) => {
+    const textToTranslate = document.body.innerText; // Example: Adjust as needed
+    const apiUrl = `https://libretranslate.com/translate`;
+
+    fetch(apiUrl, {
+      method: 'POST',
+      body: JSON.stringify({
+        q: textToTranslate,
+        source: 'en', // Source language (English)
+        target: countryCode.toLowerCase(), // Convert country code to lowercase
+        format: 'text',
+      }),
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        document.body.innerHTML = data.translatedText; // Replace body text with translated text
+      })
+      .catch((error) => console.error('Error translating:', error));
+  };
+
   return (
     <Router>
       <div>
-        <Navbar cartItems={cartItems} /> {/* Pass cartItems to Navbar */}
+        {/* Pass scrollToProductSection and changeLanguage to Navbar */}
+        <Navbar scrollToProductSection={scrollToProductSection} changeLanguage={changeLanguage} cartItems={cartItems} />
         <Routes>
-          {/* Main Home Page Route */}
-          <Route 
-            path="/" 
+          <Route
+            path="/"
             element={
               <>
                 <Hero scrollToProductSection={scrollToProductSection} />
@@ -56,7 +78,6 @@ function App() {
               </>
             }
           />
-          {/* MultiStepForm route */}
           <Route path="/buy-now" element={<MultiStepForm />} />
         </Routes>
       </div>

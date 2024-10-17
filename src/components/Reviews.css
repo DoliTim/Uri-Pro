@@ -1,7 +1,6 @@
-/* src/components/Reviews.css */
 .reviews-section {
     padding: 60px 20px;
-    background-color: #f7f7f7;
+    background-color: #000000;
     text-align: center;
   }
   
@@ -11,7 +10,7 @@
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
-    overflow-y: scroll; /* Remove the fixed height */
+    overflow-y: scroll; 
   }
   
   .review {
@@ -26,6 +25,7 @@
   .review h3 {
     font-size: 1.2rem;
     margin-bottom: 5px;
+    color: rgba(56, 96, 79, 1);
   }
   
   .review p {
@@ -35,7 +35,7 @@
   
   .review-date {
     font-size: 0.9rem;
-    color: #888;
+    color: orange;
   }
   
   .reviews-container::-webkit-scrollbar {
@@ -47,10 +47,10 @@
     border-radius: 10px;
   }
   
-  /* Responsive layout */
+ 
   @media (max-width: 768px) {
     .reviews-container {
-      padding: 10px; /* Adjust padding for smaller screens */
+      padding: 10px; 
     }
   }
   

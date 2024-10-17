@@ -1,0 +1,12 @@
+.legal-disclaimer {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.1); 
+    text-align: center;
+    font-size: 0.8rem; 
+    padding: 20px 0;
+  }
+  
+  .legal-disclaimer p {
+    margin: 5px 0;
+  }
+  
