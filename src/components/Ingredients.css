@@ -1,50 +1,69 @@
 .ingredients-section {
   padding: 40px 20px;
-  background-color: orange;
-  text-align: center;
+  background-color: #FFA500;
+  text-align: left;
 }
 
 .ingredients-grid {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .ingredient-card {
-  width: 250px;
-  height: 250px;
-  background-color: orange;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 20px;
+  height: auto;
+  background-color: transparent;
+  overflow: visible;
 }
 
 .ingredient-card img {
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 120px;
   object-fit: cover;
+  border-radius: 0 20px 20px 0;
 }
 
 .ingredient-details {
-  color: white;
-  padding: 20px;
-  text-align: center;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  text-align: left;
+  flex: 1;
 }
-
-
-.ingredient-card:hover .ingredient-details {
-  color: white; 
-}
-
 
 h2.ingredients-title {
   font-size: 2.2rem;
   font-weight: bold;
-  color: #004d00; 
+  color: #004d00;
   margin-bottom: 30px;
+  text-align: left;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .ingredients-section {
+    padding: 20px 15px;
+  }
+
+  .ingredient-card {
+    gap: 15px;
+  }
+
+  .ingredient-card img {
+    width: 80px;
+    height: 100px;
+  }
+
+  .ingredient-details {
+    font-size: 0.9rem;
+  }
+
+  h2.ingredients-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
 }
