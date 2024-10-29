@@ -1,69 +1,74 @@
 .ingredients-section {
   padding: 40px 20px;
-  background-color: #FFA500;
-  text-align: left;
+  background-color: orange;
+  text-align: center;
 }
 
 .ingredients-grid {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
-  max-width: 800px;
-  margin: 0 auto;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .ingredient-card {
+  width: 250px;
+  height: 250px;
+  background-color: orange;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 20px;
-  height: auto;
-  background-color: transparent;
-  overflow: visible;
+  justify-content: center;
 }
 
 .ingredient-card img {
-  width: 100px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 0 20px 20px 0;
 }
 
 .ingredient-details {
-  color: rgb(255, 255, 255);
-  padding: 10px;
-  text-align: left;
-  flex: 1;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.ingredient-card:hover .ingredient-details {
+  color: white; 
 }
 
 h2.ingredients-title {
   font-size: 2.2rem;
   font-weight: bold;
-  color: #004d00;
+  color: #004d00; 
   margin-bottom: 30px;
-  text-align: left;
 }
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
-  .ingredients-section {
-    padding: 20px 15px;
+  .ingredients-grid {
+    gap: 30px; /* Increased gap between cards */
   }
 
   .ingredient-card {
-    gap: 15px;
-  }
-
-  .ingredient-card img {
-    width: 80px;
-    height: 100px;
+    width: 45%; /* Two cards per row */
+    height: 300px; /* Increased height to fit text */
+    min-width: 150px; /* Minimum width */
   }
 
   .ingredient-details {
-    font-size: 0.9rem;
+    padding: 15px;
+    font-size: 0.9rem; /* Slightly smaller text */
   }
+}
 
-  h2.ingredients-title {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+/* Very small screens */
+@media (max-width: 480px) {
+  .ingredient-card {
+    width: 80%; /* One card per row */
+    height: 350px; /* Even more height for smallest screens */
   }
 }
