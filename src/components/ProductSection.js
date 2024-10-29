@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // We can remove useNavigate since we're not using it anymore
 import './ProductSection.css';
-import { FaStar } from 'react-icons/fa'; // Import React Icon for the best deal
+import { FaStar } from 'react-icons/fa';
 
 const ProductSection = () => {
   const [selectedTreatment, setSelectedTreatment] = useState('');
   const [isExpanded, setIsExpanded] = useState(false);
-  const navigate = useNavigate();
 
   const handleSelection = (treatment) => {
     setSelectedTreatment(treatment);
@@ -16,9 +15,18 @@ const ProductSection = () => {
     if (!selectedTreatment) {
       e.preventDefault();
       alert('Please select a treatment plan before proceeding.');
-    } else {
-      navigate('/buy-now', { state: { treatment: selectedTreatment } });
+      return;
     }
+
+    // Stripe payment links for each treatment option
+    const stripeLinks = {
+      '1-month': 'https://buy.stripe.com/cN29Bu5fJ9lC5skeUY',
+      '2-month': 'https://buy.stripe.com/00gaFy7nRdBS1c47sv',
+      '3-month': 'https://buy.stripe.com/8wMaFy0Zt1TacUM6oo'
+    };
+
+    // Redirect to the appropriate Stripe payment link
+    window.location.href = stripeLinks[selectedTreatment];
   };
 
   const toggleEssay = () => {
@@ -27,14 +35,42 @@ const ProductSection = () => {
 
   return (
     <section className="product-section">
-      {/* Added Heading */}
       <h1 className="product-heading">Uri-PRO</h1>
       <div className="product-text">
         <p>
           The bioactive pelvic floor muscle strengthener is a scientifically-backed solution designed for the effective management and treatment of urinary dysfunction. In clinical trials, our comprehensive three-phase treatment showed a <span className="highlight">99% satisfaction rate</span> among participants, with marked improvements in urinary control, bladder function, and overall quality of life.
         </p>
+        
+        <div className="results-section">
+          <div className="result-card">
+            <h2>IN 30 DAYS*</h2>
+            <div className="result-stats">
+              <div>
+                <h3>85%</h3>
+                <p>felt stable urinary control</p>
+              </div>
+              <div>
+                <h3>90%</h3>
+                <p>reported improvement in urinary discomfort</p>
+              </div>
+            </div>
+          </div>
 
-        {/* Expandable essay button */}
+          <div className="result-card">
+            <h2>IN 90 DAYS*</h2>
+            <div className="result-stats">
+              <div>
+                <h3>95%</h3>
+                <p>reported long-term urinary health improvement</p>
+              </div>
+              <div>
+                <h3>99%</h3>
+                <p>experienced reduced urgency and frequency</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <button className="expand-btn" onClick={toggleEssay}>
           {isExpanded ? 'Hide Details' : 'Learn More About the Clinical Study'}
         </button>
@@ -53,7 +89,6 @@ const ProductSection = () => {
             <p>
               The final phase, the <span className="highlight">third month</span>, was designed to ensure <span className="highlight">long-term protection</span> and maintenance. Participants completed a full 3-month course with a special offer.
             </p>
-            {/* Added Image at the Bottom */}
             <div className="bladder-image-container">
               <img src={require('../images/bladder.jpg')} alt="Bladder Diagram" />
             </div>
@@ -61,22 +96,28 @@ const ProductSection = () => {
         )}
 
         <div className="treatment-options">
-          {/* 1 Month Treatment */}
-          <div className={`treatment-card ${selectedTreatment === '1-month' ? 'selected' : ''}`} onClick={() => handleSelection('1-month')}>
+          <div 
+            className={`treatment-card ${selectedTreatment === '1-month' ? 'selected' : ''}`} 
+            onClick={() => handleSelection('1-month')}
+          >
             <h2>1 Month Treatment</h2>
             <p>Price: €30.00</p>
             <p><span className="highlight">30 pills</span> (4 weeks). Initial relief from urinary discomfort, detoxify and prepare the urinary tract.</p>
           </div>
 
-          {/* 2 Months Treatment */}
-          <div className={`treatment-card ${selectedTreatment === '2-month' ? 'selected' : ''}`} onClick={() => handleSelection('2-month')}>
+          <div 
+            className={`treatment-card ${selectedTreatment === '2-month' ? 'selected' : ''}`} 
+            onClick={() => handleSelection('2-month')}
+          >
             <h2>2 Months Treatment</h2>
             <p>Price: €50.00</p>
             <p><span className="highlight">60 pills</span> (8 weeks). Deeper healing process, reduce urinary frequency and discomfort, improve bladder control.</p>
           </div>
 
-          {/* 3 Months Treatment (Best Deal) */}
-          <div className={`treatment-card best-value ${selectedTreatment === '3-month' ? 'selected' : ''}`} onClick={() => handleSelection('3-month')}>
+          <div 
+            className={`treatment-card best-value ${selectedTreatment === '3-month' ? 'selected' : ''}`} 
+            onClick={() => handleSelection('3-month')}
+          >
             <h2>3 Months Treatment <FaStar style={{ color: 'orange', marginLeft: '10px' }} /></h2>
             <p>Price: €59.99 <span className="sale">Special Sale: 2+1 Free!</span></p>
             <p><span className="highlight">90 pills</span> (12 weeks). Best value for full recovery and long-term protection, based on our survey, 90% of users choose this plan for complete and lasting results.</p>
@@ -85,7 +126,6 @@ const ProductSection = () => {
 
         <p className="highlight-text">Relive Your Life and Get Rid of Bladder Issues for Good for Less Than 1 EUR a Day</p>
 
-        {/* Buy Now button */}
         <button className="buy-now-btn" onClick={handleBuyNow}>
           Buy Now
         </button>

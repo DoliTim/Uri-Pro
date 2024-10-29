@@ -9,7 +9,7 @@ import Company from './components/Company';
 import Reviews from './components/Reviews';
 import MultiStepForm from './components/MultiStepForm';
 import './App.css';
-
+import UriProStandards from './components/UriProStandards';
 function App() {
   const [cartItems, setCartItems] = useState([]);
   const productSectionRef = useRef(null);
@@ -73,6 +73,7 @@ function App() {
                   <ProductSection addToCart={addToCart} />
                 </div>
                 <Ingredients />
+                <UriProStandards/>
                 <Company />
                 <Reviews />
               </>

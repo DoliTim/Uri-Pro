@@ -63,17 +63,7 @@ const Navbar = ({
         </div>
       </div>
 
-      {/* Language Selector */}
-      <div className="language-selector">
-        <Select
-          className="language-select"
-          options={options}
-          onChange={(option) => changeLanguage(option.value)}
-          defaultValue={options.find((opt) => opt.value === 'en')}
-          isSearchable={false}
-          components={{ SingleValue, Option }}
-        />
-      </div>
+    
     </nav>
   );
 };

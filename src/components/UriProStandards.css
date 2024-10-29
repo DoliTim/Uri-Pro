@@ -1,0 +1,62 @@
+.standards-section {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  .standards-section h2 {
+    font-size: 2rem;
+    color: rgba(56, 96, 79, 1);
+    margin-bottom: 20px;
+  }
+  
+  .standards-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+  }
+  
+  .standard-item {
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .standard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .check-icon {
+    color: green;
+    margin-right: 10px;
+  }
+  
+  .standard-header span {
+    flex-grow: 1;
+    color: rgba(56, 96, 79, 0.9);
+  }
+  
+  .standard-content {
+    padding: 10px 0;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .standard-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Chevron icons for expanding/collapsing */
+  .standard-header svg {
+    margin-left: 10px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  

@@ -68,7 +68,7 @@
 
 .hero-right {
   flex: 1;
-  background-image: url('/src/images/uri.png');
+  background-image: url('/src/images/product.png');
   background-size: cover;
   background-position: center;
   box-sizing: border-box;

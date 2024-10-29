@@ -173,3 +173,61 @@
     margin-top: 20px;
   }
 }
+.results-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+
+.result-card {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  width: 45%;
+  text-align: center;
+}
+
+.result-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color:rgba(56, 96, 79, 1);
+}
+
+.result-stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.result-stats div {
+  text-align: center;
+}
+
+.result-stats h3 {
+  font-size: 2.5rem;
+  color: orange;
+  margin: 0;
+}
+
+.result-stats p {
+  font-size: 1rem;
+  color: black;
+  margin-top: 5px;
+}
+/* Mobile adjustments for stacking the result cards */
+@media (max-width: 768px) {
+  .results-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .result-card {
+    width: 100%; /* Full width on mobile */
+  }
+
+  .result-stats {
+    flex-direction: column; /* Stack numbers and descriptions vertically */
+    gap: 10px;
+  }
+}
