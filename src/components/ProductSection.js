@@ -118,8 +118,8 @@ const ProductSection = () => {
             className={`treatment-card best-value ${selectedTreatment === '3-month' ? 'selected' : ''}`} 
             onClick={() => handleSelection('3-month')}
           >
-            <h2>3 Months Treatment <FaStar style={{ color: 'orange', marginLeft: '10px' }} /></h2>
-            <p>Price: €59.99 <span className="sale">Special Sale: 2+1 Free!</span></p>
+            <h2>3 Months Treatment SALE <FaStar style={{ color: 'orange', marginLeft: '10px' }} /></h2>
+            <p>Price: €59.99</p>
             <p><span className="highlight">90 pills</span> (12 weeks). Best value for full recovery and long-term protection, based on our survey, 90% of users choose this plan for complete and lasting results.</p>
           </div>
         </div>

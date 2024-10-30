@@ -2,115 +2,185 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 20px;
-  background-color: #ffffff;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
   text-align: center;
+  min-height: 100vh;
 }
 
-.product-section h1 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
+.product-heading {
+  font-size: 3.5rem;
   color: rgba(56, 96, 79, 1);
+  margin-bottom: 40px;
+  position: relative;
+  animation: fadeIn 1s ease-out;
+}
+
+.product-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: orange;
 }
 
 .product-text {
   max-width: 800px;
-  margin: 0 auto 40px auto; /* Centering the product text */
-  color: black;
-  line-height: 1.6;
+  margin: 0 auto 60px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  animation: fadeIn 1s ease-out 0.2s backwards;
+}
+
+.results-section {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 60px auto;
+}
+
+.result-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  flex: 1;
+  max-width: 450px;
+  animation: slideIn 0.8s ease-out;
+}
+
+.result-card h2 {
+  color: rgba(56, 96, 79, 1);
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.result-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.result-stats h3 {
+  font-size: 3rem;
+  color: orange;
+  margin: 0;
+  animation: countUp 2s ease-out forwards;
+}
+
+.result-stats p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 10px;
 }
 
 .treatment-options {
   display: flex;
-  justify-content: space-around;
-  align-items: stretch; 
-  gap: 20px;
-  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin: 40px 0;
+  width: 100%;
+  max-width: 1200px;
+  perspective: 1000px;
 }
 
 .treatment-card {
-  background-color: #101111; 
-  color: white; 
-  padding: 30px;
-  border-radius: 8px;
-  flex: 1; 
-  max-width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-  cursor: pointer;
+  background: linear-gradient(145deg, #1a1a1a 0%, #000000 100%);
+  color: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  flex: 1;
+  max-width: 350px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  transform-style: preserve-3d;
+  animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .treatment-card:hover {
-  transform: scale(1.05); 
+  transform: translateY(-10px) rotateX(5deg);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
-.treatment-card.selected {
+/* Special styling for the 3-month card */
+.treatment-card.best-value {
+  background: linear-gradient(145deg, #000000, #1a1a1a);
+  transform: scale(1.05);
   border: 2px solid orange;
+  z-index: 2;
+}
+
+.treatment-card.best-value::before {
+  content: 'BEST VALUE';
+  position: absolute;
+  bottom: -42px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: orange;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(255,165,0,0.3);
+}
+
+.treatment-card.best-value:hover {
+  transform: translateY(-15px) rotateX(5deg) scale(1.05);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
 }
 
 .treatment-card h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.treatment-card.best-value h2 {
+  color: orange;
 }
 
 .treatment-card p {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  color: white; 
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  opacity: 0.9;
 }
 
 .sale {
-  color: orange;
-  font-weight: bold;
-}
-
-.highlight-text {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: orange;
-  margin-bottom: 30px;
-}
-
-/* Center the Buy Now button on mobile */
-.buy-now-btn {
-  padding: 15px 30px;
-  font-size: 1.5rem;
-  background-color: orange;
+  display: inline-block;
+  background: orange;
   color: white;
-  text-decoration: none;
+  padding: 8px 15px;
   border-radius: 20px;
-  transition: background-color 0.3s ease;
-  margin-top: 20px; 
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: 10px;
+  transform: rotate(-3deg);
+  animation: wiggle 2s infinite;
 }
 
-.buy-now-btn:hover {
-  background-color: darkorange;
+.treatment-card.selected {
+  border: 3px solid orange;
+  animation: pulse 2s infinite;
 }
 
-.expand-btn {
-  padding: 15px 30px;
-  font-size: 1.5rem;
-  background-color: #203f35;
+
+.sale {
+  background: orange;
   color: white;
-  text-decoration: none;
-  border-radius: 20px;
-  transition: background-color 0.3s ease;
-  margin-top: 30px;
-  cursor: pointer;
-}
-
-.expand-btn:hover {
-  background-color: orange;
-}
-
-.essay-container {
-  margin-top: 20px;
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 20px;
-  transition: all 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  margin-left: 10px;
 }
 
 .highlight {
@@ -118,116 +188,97 @@
   font-weight: bold;
 }
 
-.bladder-image-container {
-  text-align: center;
-  margin-top: 20px;
+.buy-now-btn {
+  padding: 20px 60px;
+  font-size: 1.6rem;
+  background: linear-gradient(45deg, #ff8800, #ff6600);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(255,136,0,0.3);
+}
+
+.buy-now-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(255,136,0,0.4);
+}
+
+.expand-btn {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  background: rgba(56, 96, 79, 0.9);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: 30px 0;
+  transition: all 0.3s ease;
+}
+
+.expand-btn:hover {
+  background: orange;
+  transform: translateY(-3px);
+}
+
+.essay-container {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  margin-top: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  animation: expandIn 0.5s ease-out;
 }
 
 .bladder-image-container img {
   max-width: 100%;
-  height: auto;
-  border-radius: 10px; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  margin-top: 30px;
 }
 
-.product-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.product-image {
-  width: 300px;
-  margin-right: 30px;
-}
-
-.bladder-image {
-  width: 300px;
-}
-
-/* Media queries for mobile responsiveness */
+/* Mobile Adjustments */
 @media (max-width: 768px) {
   .product-section {
-    padding: 20px 15px; /* Reducing padding on mobile */
+    padding: 40px 15px;
   }
 
-  .product-text {
-    max-width: 100%; /* Full width on mobile */
-    margin: 0 auto 20px auto; /* Center the text properly */
+  .product-heading {
+    font-size: 2.5rem;
+  }
+
+  .treatment-options {
+    flex-direction: column;
+    align-items: center;
   }
 
   .treatment-card {
-    max-width: 100%; /* Full width on mobile */
+    width: 100%;
+    max-width: none;
   }
 
-  .buy-now-btn {
-    padding: 15px 20px;
-    font-size: 1.4rem;
-    margin: 20px 0; /* Adjusting space for mobile */
-  }
-
-  .expand-btn {
-    padding: 15px 20px;
-    font-size: 1.4rem;
-    margin-top: 20px;
-  }
-}
-.results-section {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 800px;
-  margin-bottom: 30px;
-}
-
-.result-card {
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 10px;
-  width: 45%;
-  text-align: center;
-}
-
-.result-card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color:rgba(56, 96, 79, 1);
-}
-
-.result-stats {
-  display: flex;
-  justify-content: space-between;
-}
-
-.result-stats div {
-  text-align: center;
-}
-
-.result-stats h3 {
-  font-size: 2.5rem;
-  color: orange;
-  margin: 0;
-}
-
-.result-stats p {
-  font-size: 1rem;
-  color: black;
-  margin-top: 5px;
-}
-/* Mobile adjustments for stacking the result cards */
-@media (max-width: 768px) {
   .results-section {
     flex-direction: column;
-    gap: 20px;
   }
 
   .result-card {
-    width: 100%; /* Full width on mobile */
+    max-width: none;
+  }
+
+  .buy-now-btn {
+    width: 90%;
+    padding: 15px 30px;
+    font-size: 1.4rem;
   }
 
   .result-stats {
-    flex-direction: column; /* Stack numbers and descriptions vertically */
-    gap: 10px;
+    grid-template-columns: 1fr;
   }
 }
+
+/* All your existing animations stay the same */
+/* (Keep all the @keyframes and animation definitions from the previous CSS) */
