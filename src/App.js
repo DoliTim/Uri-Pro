@@ -10,6 +10,8 @@ import Reviews from './components/Reviews';
 import MultiStepForm from './components/MultiStepForm';
 import './App.css';
 import UriProStandards from './components/UriProStandards';
+import Footer from './components/Footer';
+
 function App() {
   const [cartItems, setCartItems] = useState([]);
   const productSectionRef = useRef(null);
@@ -76,6 +78,8 @@ function App() {
                 <UriProStandards/>
                 <Company />
                 <Reviews />
+             
+                <Footer />
               </>
             }
           />
