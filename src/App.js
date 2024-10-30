@@ -11,11 +11,13 @@ import MultiStepForm from './components/MultiStepForm';
 import './App.css';
 import UriProStandards from './components/UriProStandards';
 import Footer from './components/Footer';
-
+import BottomBar from './components/BottomBar';
 function App() {
   const [cartItems, setCartItems] = useState([]);
   const productSectionRef = useRef(null);
-
+  const scrollToProducts = () => {
+    productSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   // Function to add an item to the cart
   const addToCart = (item) => {
     setCartItems((prevItems) => {
@@ -62,13 +64,12 @@ function App() {
   return (
     <Router>
       <div>
-        {/* Pass scrollToProductSection and changeLanguage to Navbar */}
         <Navbar scrollToProductSection={scrollToProductSection} changeLanguage={changeLanguage} cartItems={cartItems} />
         <Routes>
           <Route
             path="/"
             element={
-              <>
+              <div className="main-content">
                 <Hero scrollToProductSection={scrollToProductSection} />
                 <Features />
                 <div ref={productSectionRef}>
@@ -78,9 +79,9 @@ function App() {
                 <UriProStandards/>
                 <Company />
                 <Reviews />
-             
                 <Footer />
-              </>
+                <BottomBar scrollToProducts={scrollToProducts} />
+              </div>
             }
           />
           <Route path="/buy-now" element={<MultiStepForm />} />
